@@ -10,7 +10,7 @@ export const verifyToken = (req, res, next) => {
   }
 
   try {
-    // console.log(process.env.JWT_SECRET)
+    console.log(process.env.JWT_TOKEN)
     const decoded = jwt.verify(token, process.env.JWT_TOKEN); // 🔑 verify token
     req.user = decoded; // 🧠 store user info for later
     next(); // ✅ move on to the actual route

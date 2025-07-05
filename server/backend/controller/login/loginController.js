@@ -119,7 +119,7 @@ export const handlePassword = async (req, res) => {
         sameSite: "lax",
         maxAge: 86400000, // 1 day in ms
       });
-
+      console.log('cookie added',token)
       return res.status(200).send({ msg: "Correct Password", auth: true });
     }
   } catch (err) {
