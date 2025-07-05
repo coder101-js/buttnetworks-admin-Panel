@@ -15,10 +15,10 @@ export const handleEmail = async (req, res) => {
       return res.status(404).send({ msg: "Email not found!" });
     }
     const { email: rawEmail } = req.body;
-    // const { email } = JSON.parse(rawEmail);
+    const { email } = JSON.parse(rawEmail);
     
-    const user = await userData.find();
-    console.log(user)
+    const user = await userData.findOne({ email: email });
+
     if (!user) {
       return res.status(404).send({
         email: {
