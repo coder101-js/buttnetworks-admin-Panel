@@ -10,7 +10,8 @@ export const verifyToken = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET); // 🔑 verify token
+    // console.log(process.env.JWT_SECRET)
+    const decoded = jwt.verify(token, process.env.JWT_TOKEN); // 🔑 verify token
     req.user = decoded; // 🧠 store user info for later
     next(); // ✅ move on to the actual route
   } catch (err) {
