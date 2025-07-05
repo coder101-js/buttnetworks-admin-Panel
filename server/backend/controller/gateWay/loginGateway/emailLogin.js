@@ -22,10 +22,9 @@ export const handleEmailLoginGateway = async (req, res) => {
       const response = await fetch("http://localhost:3000/login/email", option);
       const data = await response.json();
       return data
-
     } catch (error) {
       console.error("💥 Email API Error:", error);
-      res.status(500).send({ error: "Something went wrong 😢" });
+      return res.status(500).send({ error: "Something went wrong 😢" });
     }
   }
 };
