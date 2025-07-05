@@ -57,7 +57,7 @@ const AdminContact = () => {
         setContactList(Array.isArray(contactJson.data) ? contactJson.data : []);
       } catch (err) {
         console.error("🔥 fetch error:", err);
-        navigate("/login/email", { replace: true });
+        // navigate("/login/email", { replace: true });
       }
     };
 
