@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/contact",
+    path: "/admin/contact/login/email",
     element: (
       <>
         <AdminContact />
