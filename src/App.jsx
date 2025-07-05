@@ -29,6 +29,14 @@ const Router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/admin/contact",
+    element: (
+      <>
+        <AdminContact />
+      </>
+    ),
+  },
 ]);
 function App() {
   return (
