@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import {
   faBars,
   faHouse,
@@ -11,7 +11,7 @@ import {
 import "./style/Admin.css";
 
 const AdminContact = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // Body theming
   useEffect(() => {
     document.body.classList.add("body-admin");
@@ -29,9 +29,8 @@ const AdminContact = () => {
   // Fetch page 1 of contacts on mount
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        // Step 1: Validate JWT via GET
-        // const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
+      // Step 1: Validate JWT via GET
+      // const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
         //   method: "GET",
         //   credentials: "include", 
         //   headers: { "Content-Type": "application/json" },
@@ -40,11 +39,12 @@ const AdminContact = () => {
         // const authData = await authRes.json();
 
         // if (!authData?.auth) {
-        //   navigate("/login/email", { replace: true });
+          //   navigate("/login/email", { replace: true });
         //   return;
         // }
-
+        
         // Step 2: Fetch contacts via POST
+        try {
         const contactRes = await fetch("https://api.admin.buttnetworks.com/contact", {
           method: "POST",
           credentials: "include", // ✅ Send cookie here too
