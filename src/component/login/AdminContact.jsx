@@ -31,18 +31,18 @@ const AdminContact = () => {
     const fetchData = async () => {
       try {
         // Step 1: Validate JWT via GET
-        const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
-          method: "GET",
-          credentials: "include", // ✅ Make sure cookie gets sent
-          headers: { "Content-Type": "application/json" },
-        });
+        // const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
+        //   method: "GET",
+        //   credentials: "include", 
+        //   headers: { "Content-Type": "application/json" },
+        // });
 
-        const authData = await authRes.json();
+        // const authData = await authRes.json();
 
-        if (!authData?.auth) {
-          navigate("/login/email", { replace: true });
-          return;
-        }
+        // if (!authData?.auth) {
+        //   navigate("/login/email", { replace: true });
+        //   return;
+        // }
 
         // Step 2: Fetch contacts via POST
         const contactRes = await fetch("https://api.admin.buttnetworks.com/contact", {
