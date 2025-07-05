@@ -8,7 +8,6 @@ export const handleEmailLoginGateway = async (req, res) => {
   } else if (req.body.type === "email") {
     const apiKey = process.env.API_KEY;
     const { email } = req.body;
-
     try {
       const option = {
         method: "POST",

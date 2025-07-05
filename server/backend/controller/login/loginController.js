@@ -16,8 +16,9 @@ export const handleEmail = async (req, res) => {
     }
     const { email: rawEmail } = req.body;
     const { email } = JSON.parse(rawEmail);
-
+    
     const user = await userData.findOne({ email: email });
+    console.log(user)
     if (!user) {
       return res.status(404).send({
         email: {
