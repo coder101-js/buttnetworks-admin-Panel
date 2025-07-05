@@ -3,7 +3,7 @@ import loginRouter from "./login.js";
 import contactData from "./contactData.js";
 // import signupRouter from "./signin.js";
 // import { authApiKey } from "./controller/apiAuth/apiKeyAuth.js";
-import validateAdminJwt from './adminValidate.js'
+import validateAdminJwt from "./adminValidate.js";
 import gateway from "./gateway.js";
 import cors from "cors";
 import helmet from "helmet";
@@ -17,7 +17,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://admin.buttnetworks.com/"],
+    origin: ["https://admin.buttnetworks.com"],
     credentials: true, // allow cookies
   })
 );
