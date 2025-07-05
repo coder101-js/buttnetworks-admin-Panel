@@ -28,40 +28,40 @@ const AdminContact = () => {
 
   // Fetch page 1 of contacts on mount
   useEffect(() => {
-    // const fetchData = async () => {
-    //   // Step 1: Validate JWT via GET
-    //   // const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
-    //     //   method: "GET",
-    //     //   credentials: "include", 
-    //     //   headers: { "Content-Type": "application/json" },
-    //     // });
+    const fetchData = async () => {
+      // Step 1: Validate JWT via GET
+      // const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
+        //   method: "GET",
+        //   credentials: "include", 
+        //   headers: { "Content-Type": "application/json" },
+        // });
 
-    //     // const authData = await authRes.json();
+        // const authData = await authRes.json();
 
-    //     // if (!authData?.auth) {
-    //       //   navigate("/login/email", { replace: true });
-    //     //   return;
-    //     // }
+        // if (!authData?.auth) {
+          //   navigate("/login/email", { replace: true });
+        //   return;
+        // }
         
-    //     // Step 2: Fetch contacts via POST
-    //     try {
-    //     const contactRes = await fetch("https://api.admin.buttnetworks.com/contact", {
-    //       method: "POST",
-    //       credentials: "include", // ✅ Send cookie here too
-    //       headers: { "Content-Type": "application/json" },
-    //     });
+        // Step 2: Fetch contacts via POST
+        try {
+        const contactRes = await fetch("https://api.admin.buttnetworks.com/contact", {
+          method: "POST",
+          credentials: "include", // ✅ Send cookie here too
+          headers: { "Content-Type": "application/json" },
+        });
 
-    //     if (!contactRes.ok) throw new Error(`Status ${contactRes.status}`);
+        if (!contactRes.ok) throw new Error(`Status ${contactRes.status}`);
 
-    //     const contactJson = await contactRes.json();
-    //     setContactList(Array.isArray(contactJson.data) ? contactJson.data : []);
-    //   } catch (err) {
-    //     console.error("🔥 fetch error:", err);
-    //     // navigate("/login/email", { replace: true });
-    //   }
-    // };
+        const contactJson = await contactRes.json();
+        setContactList(Array.isArray(contactJson.data) ? contactJson.data : []);
+      } catch (err) {
+        console.error("🔥 fetch error:", err);
+        // navigate("/login/email", { replace: true });
+      }
+    };
 
-    // fetchData();
+    fetchData();
   }, []);
 
   return (
