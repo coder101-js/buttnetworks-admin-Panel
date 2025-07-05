@@ -40,7 +40,7 @@ const AdminContact = () => {
         const authData = await authRes.json();
 
         if (!authData?.auth) {
-          navigate("https://admin.buttnetworks.com/login/email");
+          navigate("/login/email", { replace: true });
           return;
         }
 
@@ -57,7 +57,7 @@ const AdminContact = () => {
         setContactList(Array.isArray(contactJson.data) ? contactJson.data : []);
       } catch (err) {
         console.error("🔥 fetch error:", err);
-        navigate("https://admin.buttnetworks.com/login/email");
+        navigate("/login/email", { replace: true });
       }
     };
 
