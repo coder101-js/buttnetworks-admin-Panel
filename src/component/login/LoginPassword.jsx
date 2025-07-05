@@ -80,7 +80,7 @@ const LoginPassword = () => {
           },
           body: JSON.stringify(body),
         };
-        const api = await fetch("http://localhost:3000/gateway", option);
+        const api = await fetch("https://api.admin.buttnetworks.com/gateway", option);
         const res = await api.json();
         const value = res;
         if (value.auth) {
@@ -126,7 +126,7 @@ const LoginPassword = () => {
     };
 
     try {
-      const api = await fetch("http://localhost:3000/gateway", option);
+      const api = await fetch("https://api.admin.buttnetworks.com/gateway", option);
       const res = await api.json();
       const value = res;
       const { auth, msg, expire } = value;

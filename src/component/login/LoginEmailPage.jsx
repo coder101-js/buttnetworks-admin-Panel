@@ -56,7 +56,7 @@ const LoginEmailPage = () => {
     };
     try {
       isLoading(true);
-      const api = await fetch("http://localhost:3000/gateway", option);
+      const api = await fetch("https://api.admin.buttnetworks.com/gateway", option);
       const res = await api.json();
       const value = res;
       const { login, token } = value;

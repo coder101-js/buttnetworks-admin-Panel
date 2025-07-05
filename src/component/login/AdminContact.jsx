@@ -31,7 +31,7 @@ const AdminContact = () => {
     const fetchData = async () => {
       try {
         // Step 1: Validate JWT via GET
-        const authRes = await fetch("http://localhost:3000/validate", {
+        const authRes = await fetch("https://api.admin.buttnetworks.com/validate", {
           method: "GET",
           credentials: "include", // ✅ Make sure cookie gets sent
           headers: { "Content-Type": "application/json" },
@@ -45,7 +45,7 @@ const AdminContact = () => {
         }
 
         // Step 2: Fetch contacts via POST
-        const contactRes = await fetch("http://localhost:3000/contact", {
+        const contactRes = await fetch("https://api.admin.buttnetworks.com/contact", {
           method: "POST",
           credentials: "include", // ✅ Send cookie here too
           headers: { "Content-Type": "application/json" },
