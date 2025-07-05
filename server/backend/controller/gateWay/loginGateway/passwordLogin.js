@@ -15,7 +15,7 @@ export const tokenAuth = async (req, res) => {
     },
     body:JSON.stringify(req.body)
   }
-  const api = await fetch('http://localhost:3000/login/auth',option)
+  const api = await fetch('https://api.admin.buttnetworks.com/login/auth',option)
   const response = await api.json()
   const value = response
   return res.status(200).send(value)
@@ -33,7 +33,7 @@ export const passwordAuth = async (req, res) => {
     },
     body:JSON.stringify(req.body)
   }
-  const api = await fetch('http://localhost:3000/login/password',option)
+  const api = await fetch('https://api.admin.buttnetworks.com/login/password',option)
   const response = await api.json()
   const value = response
   console.log(value)

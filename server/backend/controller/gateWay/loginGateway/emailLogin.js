@@ -19,7 +19,7 @@ export const handleEmailLoginGateway = async (req, res) => {
         body: JSON.stringify({ email: email }),
       };
 
-      const response = await fetch("http://localhost:3000/login/email", option);
+      const response = await fetch("https://api.admin.buttnetworks.com/login/email", option);
       const data = await response.json();
       return data
     } catch (error) {
@@ -45,7 +45,7 @@ export const emailTokenGateWay = async (req, res) => {
         headers: { "x-api-key": apiKey },
       };
       const api = await fetch(
-        `http://localhost:3000/login/token?email=${encodeURIComponent(email)}`,
+        `https://api.admin.buttnetworks.com/login/token?email=${encodeURIComponent(email)}`,
         option
       );
       const response = await api.json();
