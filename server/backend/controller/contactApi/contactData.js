@@ -1,9 +1,9 @@
 export const getData = async(req,res)=>{
   try {
-    const {token} = req.cookies
-    if(!token){
-      return res.status(403).send({msg:'Invalid request'})
-    }
+    // const {token} = req.cookies
+    // if(!token){
+    //   return res.status(403).send({msg:'Invalid request'})
+    // }
     const body = {
       type:'admin/contact'
     }
